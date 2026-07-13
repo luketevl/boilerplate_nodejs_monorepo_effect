@@ -1,6 +1,6 @@
 # Auto Freela
 
-Internal Nx monorepo boilerplate using pnpm, TypeScript 7 stable, Effect v4 beta, React + Vite, Vitest, ESLint Antfu, API and interactive CLI with Clack.
+Internal Nx monorepo boilerplate using pnpm, TypeScript stable, Effect v4 beta, React + Vite, Vitest, ESLint Antfu, API, interactive CLI with Clack and emoji commits with commitizen-emoji.
 
 ## Commands
 
@@ -11,6 +11,8 @@ Internal Nx monorepo boilerplate using pnpm, TypeScript 7 stable, Effect v4 beta
 - `pnpm test`
 - `pnpm lint`
 - `pnpm build`
+- `pnpm commit`
+- `pnpm knip`
 
 ## Structure
 

@@ -1,5 +1,5 @@
 {
-  "name": "auto-freela",
+  "name": "boilerplate-monorepo-effect",
   "type": "module",
   "version": "1.0.0",
   "private": true,
@@ -10,14 +10,115 @@
     "pnpm": ">=11.0.0"
   },
   "scripts": {
-    "dev:web": "nx serve web",
+    "build": "nx run-many -t build",
+    "clean": "rm -rf dist .nx node_modules/.vite coverage",
+    "commit": "cz",
     "dev:api": "nx serve api",
     "dev:cli": "nx serve cli",
-    "build": "nx run-many -t build",
-    "test": "nx run-many -t test",
+    "dev:web": "nx serve web",
+    "knip": "knip",
     "lint": "eslint .",
-    "typecheck": "nx run-many -t typecheck",
-    "clean": "rm -rf dist .nx node_modules/.vite coverage"
+    "prepare": "husky",
+    "test": "nx run-many -t test",
+    "typecheck": "nx run-many -t typecheck"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/commitizen-emoji"
+    },
+    "commitizenEmoji": {
+      "conventionalFormat": true,
+      "replaceTypes": true,
+      "scopes": [
+        "api",
+        "cli",
+        "web",
+        "core",
+        "domain",
+        "ports",
+        "application",
+        "adapters",
+        "config",
+        "testing",
+        "deps",
+        "repo"
+      ],
+      "symbol": true,
+      "types": [
+        {
+          "code": ":sparkles:",
+          "description": "Introduce new features.",
+          "emoji": "✨",
+          "name": "feature"
+        },
+        {
+          "code": ":bug:",
+          "description": "Fix a bug.",
+          "emoji": "🐛",
+          "name": "bugfix"
+        },
+        {
+          "code": ":ambulance:",
+          "description": "Critical hotfix.",
+          "emoji": "🚑",
+          "name": "hotfix"
+        },
+        {
+          "code": ":memo:",
+          "description": "Add or update documentation.",
+          "emoji": "📝",
+          "name": "docs"
+        },
+        {
+          "code": ":art:",
+          "description": "Improve structure or format of the code.",
+          "emoji": "🎨",
+          "name": "codestyle"
+        },
+        {
+          "code": ":recycle:",
+          "description": "Refactor code.",
+          "emoji": "♻️",
+          "name": "refactor"
+        },
+        {
+          "code": ":zap:",
+          "description": "Improve performance.",
+          "emoji": "⚡",
+          "name": "perf"
+        },
+        {
+          "code": ":white_check_mark:",
+          "description": "Add or update tests.",
+          "emoji": "✅",
+          "name": "test"
+        },
+        {
+          "code": ":package:",
+          "description": "Update build system or dependencies.",
+          "emoji": "📦",
+          "name": "build"
+        },
+        {
+          "code": ":construction_worker:",
+          "description": "Update CI configuration or scripts.",
+          "emoji": "👷",
+          "name": "ci"
+        },
+        {
+          "code": ":hammer:",
+          "description": "Other changes that do not modify src or test files.",
+          "emoji": "🔨",
+          "name": "chore"
+        },
+        {
+          "code": ":rewind:",
+          "description": "Revert a previous commit.",
+          "emoji": "⏪",
+          "name": "revert"
+        }
+      ]
+    }
   },
   "dependencies": {
     "@clack/prompts": "^1.7.0",
@@ -27,6 +128,8 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^9.1.0",
+    "@commitlint/cli": "^21.2.1",
+    "@commitlint/config-conventional": "^21.2.0",
     "@eslint-react/eslint-plugin": "^5.14.5",
     "@nx/js": "^23.0.2",
     "@nx/react": "^23.0.2",
@@ -36,18 +139,24 @@
     "@types/node": "^26.1.1",
     "@types/react": "^19.2.17",
     "@types/react-dom": "^19.2.3",
-    "@typescript-eslint/parser": "^8.63.0",
-    "@typescript-eslint/typescript-estree": "^8.63.0",
     "@vitejs/plugin-react": "^6.0.3",
+    "commitizen": "^4.3.2",
+    "commitizen-emoji": "^1.0.5",
     "eslint": "^10.7.0",
     "eslint-plugin-format": "^2.0.1",
     "eslint-plugin-react-refresh": "^0.5.3",
+    "husky": "^9.1.7",
     "jsdom": "^29.1.1",
+    "knip": "^6.26.0",
+    "lint-staged": "^17.0.8",
     "nx": "^23.0.2",
     "tsconfig-paths": "^4.2.0",
     "tsx": "^4.23.0",
     "typescript": "^6.0.3",
     "vite": "^8.1.4",
     "vitest": "^4.1.10"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,json,jsonc,md,yml,yaml}": "eslint --fix"
   }
 }
