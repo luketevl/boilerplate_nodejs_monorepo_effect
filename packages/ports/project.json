@@ -1,0 +1,14 @@
+{
+  "name": "ports",
+  "sourceRoot": "packages/ports/src",
+  "projectType": "library",
+  "tags": ["type:lib", "scope:ports"],
+  "targets": {
+    "typecheck": {
+      "command": "tsc -p packages/ports/tsconfig.json --noEmit"
+    },
+    "test": {
+      "command": "vitest run --passWithNoTests packages/ports"
+    }
+  }
+}

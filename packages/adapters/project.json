@@ -1,0 +1,14 @@
+{
+  "name": "adapters",
+  "sourceRoot": "packages/adapters/src",
+  "projectType": "library",
+  "tags": ["type:lib", "scope:adapters"],
+  "targets": {
+    "typecheck": {
+      "command": "tsc -p packages/adapters/tsconfig.json --noEmit"
+    },
+    "test": {
+      "command": "vitest run --passWithNoTests packages/adapters"
+    }
+  }
+}

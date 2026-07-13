@@ -1,0 +1,14 @@
+{
+  "name": "testing",
+  "sourceRoot": "packages/testing/src",
+  "projectType": "library",
+  "tags": ["type:lib", "scope:testing"],
+  "targets": {
+    "typecheck": {
+      "command": "tsc -p packages/testing/tsconfig.json --noEmit"
+    },
+    "test": {
+      "command": "vitest run --passWithNoTests packages/testing"
+    }
+  }
+}

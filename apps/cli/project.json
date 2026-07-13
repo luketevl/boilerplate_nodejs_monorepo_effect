@@ -1,0 +1,12 @@
+{
+  "name": "cli",
+  "sourceRoot": "apps/cli/src",
+  "projectType": "application",
+  "tags": ["type:app", "scope:cli"],
+  "targets": {
+    "serve": { "command": "tsx -r tsconfig-paths/register apps/cli/src/main.ts" },
+    "build": { "command": "tsc -p apps/cli/tsconfig.json --noEmit" },
+    "typecheck": { "command": "tsc -p apps/cli/tsconfig.json --noEmit" },
+    "test": { "command": "vitest run --passWithNoTests apps/cli" }
+  }
+}

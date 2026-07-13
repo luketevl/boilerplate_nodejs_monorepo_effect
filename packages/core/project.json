@@ -1,0 +1,14 @@
+{
+  "name": "core",
+  "sourceRoot": "packages/core/src",
+  "projectType": "library",
+  "tags": ["type:lib", "scope:core"],
+  "targets": {
+    "typecheck": {
+      "command": "tsc -p packages/core/tsconfig.json --noEmit"
+    },
+    "test": {
+      "command": "vitest run --passWithNoTests packages/core"
+    }
+  }
+}

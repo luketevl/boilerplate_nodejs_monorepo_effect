@@ -1,0 +1,14 @@
+{
+  "name": "effect",
+  "sourceRoot": "packages/effect/src",
+  "projectType": "library",
+  "tags": ["type:lib", "scope:effect"],
+  "targets": {
+    "typecheck": {
+      "command": "tsc -p packages/effect/tsconfig.json --noEmit"
+    },
+    "test": {
+      "command": "vitest run --passWithNoTests packages/effect"
+    }
+  }
+}

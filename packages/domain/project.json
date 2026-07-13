@@ -1,0 +1,14 @@
+{
+  "name": "domain",
+  "sourceRoot": "packages/domain/src",
+  "projectType": "library",
+  "tags": ["type:lib", "scope:domain"],
+  "targets": {
+    "typecheck": {
+      "command": "tsc -p packages/domain/tsconfig.json --noEmit"
+    },
+    "test": {
+      "command": "vitest run --passWithNoTests packages/domain"
+    }
+  }
+}

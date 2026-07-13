@@ -1,0 +1,14 @@
+{
+  "name": "application",
+  "sourceRoot": "packages/application/src",
+  "projectType": "library",
+  "tags": ["type:lib", "scope:application"],
+  "targets": {
+    "typecheck": {
+      "command": "tsc -p packages/application/tsconfig.json --noEmit"
+    },
+    "test": {
+      "command": "vitest run --passWithNoTests packages/application"
+    }
+  }
+}

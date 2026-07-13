@@ -1,0 +1,12 @@
+{
+  "name": "api",
+  "sourceRoot": "apps/api/src",
+  "projectType": "application",
+  "tags": ["type:app", "scope:api"],
+  "targets": {
+    "serve": { "command": "tsx -r tsconfig-paths/register apps/api/src/main.ts" },
+    "build": { "command": "tsc -p apps/api/tsconfig.json --noEmit" },
+    "typecheck": { "command": "tsc -p apps/api/tsconfig.json --noEmit" },
+    "test": { "command": "vitest run --passWithNoTests apps/api" }
+  }
+}

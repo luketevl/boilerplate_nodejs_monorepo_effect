@@ -1,0 +1,14 @@
+{
+  "name": "config",
+  "sourceRoot": "packages/config/src",
+  "projectType": "library",
+  "tags": ["type:lib", "scope:config"],
+  "targets": {
+    "typecheck": {
+      "command": "tsc -p packages/config/tsconfig.json --noEmit"
+    },
+    "test": {
+      "command": "vitest run --passWithNoTests packages/config"
+    }
+  }
+}

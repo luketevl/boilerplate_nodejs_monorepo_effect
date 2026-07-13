@@ -1,0 +1,53 @@
+{
+  "name": "auto-freela",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "packageManager": "pnpm@11.12.0",
+  "description": "Internal Nx monorepo boilerplate with Effect, React/Vite, API and interactive CLI.",
+  "engines": {
+    "node": ">=26.0.0",
+    "pnpm": ">=11.0.0"
+  },
+  "scripts": {
+    "dev:web": "nx serve web",
+    "dev:api": "nx serve api",
+    "dev:cli": "nx serve cli",
+    "build": "nx run-many -t build",
+    "test": "nx run-many -t test",
+    "lint": "eslint .",
+    "typecheck": "nx run-many -t typecheck",
+    "clean": "rm -rf dist .nx node_modules/.vite coverage"
+  },
+  "dependencies": {
+    "@clack/prompts": "^1.7.0",
+    "effect": "4.0.0-beta.97",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^9.1.0",
+    "@eslint-react/eslint-plugin": "^5.14.5",
+    "@nx/js": "^23.0.2",
+    "@nx/react": "^23.0.2",
+    "@nx/vite": "^23.0.2",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
+    "@types/node": "^26.1.1",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "@typescript-eslint/parser": "^8.63.0",
+    "@typescript-eslint/typescript-estree": "^8.63.0",
+    "@vitejs/plugin-react": "^6.0.3",
+    "eslint": "^10.7.0",
+    "eslint-plugin-format": "^2.0.1",
+    "eslint-plugin-react-refresh": "^0.5.3",
+    "jsdom": "^29.1.1",
+    "nx": "^23.0.2",
+    "tsconfig-paths": "^4.2.0",
+    "tsx": "^4.23.0",
+    "typescript": "^6.0.3",
+    "vite": "^8.1.4",
+    "vitest": "^4.1.10"
+  }
+}
